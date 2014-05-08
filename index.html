@@ -20,6 +20,7 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<script src="plugin/chart/Chart.js"> </script>
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
 			if( window.location.search.match( /print-pdf/gi ) ) {
@@ -29,7 +30,19 @@
 				link.href = 'css/print/pdf.css';
 				document.getElementsByTagName( 'head' )[0].appendChild( link );
 			}
+
+			function gen_charts() {
+				charts = document.getElementsByClassName('chart-draw');
+				for(i = 0; i < charts.length; ++i) {
+					cid = charts[i].id;
+					eval(document.getElementById(cid).innerHTML);
+				}
+			}
 		</script>
+
+		<style>
+		.chart-draw { display: none; }
+		</style>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -388,7 +401,11 @@ function linkify( selector ) {
 				]
 			});
 
-		</script>
+			Reveal.addEventListener( 'ready', function( event ) {
+				// event.currentSlide, event.indexh, event.indexv
+				gen_charts();
+			} );
 
+		</script>
 	</body>
 </html>
