@@ -47,7 +47,7 @@ body {
   font-family: "Quicksand", sans-serif;
   line-height: 0.9em;
   letter-spacing: -0.08em;
-  text-transform: uppercase;
+  text-transform: none;
   text-shadow: none; }
 
 .reveal h1 {
@@ -128,6 +128,7 @@ body {
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
+  height: 7px;
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
