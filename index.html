@@ -42,6 +42,19 @@
 
 		<style>
 		.chart-draw { display: none; }
+		.two-col { column-count: 2; -webkit-column-count: 2; -moz-column-count: 2; }
+		.two-col .span-all {
+			display: block;
+			column-span: all;
+			-webkit-column-span: all;
+			-moz-column-span: all;
+		}
+		.two-col .next-col { /* only for block-level element */
+			break-before: column;
+			-webkit-column-break-before: always;
+			-moz-column-break-before: always;
+		}
+
 		</style>
 
 		<!--[if lt IE 9]>
