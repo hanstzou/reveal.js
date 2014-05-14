@@ -41,6 +41,36 @@
 		</script>
 
 		<style>
+		@media all and (-ms-high-contrast: none) {
+		/* IE 11 hack for larger ul disc */
+			section > ul > li,
+			section li li ul > li {
+				list-style-type: none;
+				text-indent: -1em;
+			}
+			section > ul > li:before,
+			section li li ul > li:before {
+				content: '\0025cf';
+				vertical-align: top;
+				padding-right: .35em;
+			}
+			section > ul > li:before {
+				line-height: 1.1em;
+			}
+			section li li ul > li:before {
+				content: '\0025cb';
+			}
+			section > ul > li li,
+			section li li ul > li li {
+				text-indent: 0;
+			}
+			section > ul > li > p:first-child,
+			section li li ul > li > p:first-child {
+				display: inline;
+			}
+			.reveal pre { box-shadow: none; }
+			.reveal pre code { box-shadow: 0px 0px 6px rgba(0,0,0,0.3); }
+		}
 		.chart-draw { display: none; }
 		.two-col { column-count: 2; -webkit-column-count: 2; -moz-column-count: 2; }
 		.two-col .span-all {
